@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: FlatButton(
+          child: TextButton(
             child: Text(
               'Get Accuracy Setting',
             ),
