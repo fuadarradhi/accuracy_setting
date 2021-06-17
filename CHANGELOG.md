@@ -6,3 +6,7 @@
 ## 2.0.0
 
 * Null Safery
+
+## 2.0.1
+
+* fix Unhandled Exception:

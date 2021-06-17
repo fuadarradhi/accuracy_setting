@@ -19,18 +19,18 @@ class AccuracySetting {
   static const MethodChannel _channel = const MethodChannel('accuracy_setting');
 
   static Future<AccuracySettingMode> getAccuracySetting() async {
-    final int settingMode = await (_channel.invokeMethod('getAccuracySetting') as FutureOr<int>);
+    final int settingMode = await _channel.invokeMethod('getAccuracySetting');
     return AccuracySettingMode.values[settingMode];
   }
 
-  static Future<bool?> getProviderEnabled(
+  static Future<bool> getProviderEnabled(
       LocationProvider locationProvider) async {
-    bool? providerEnabled = false;
+    bool providerEnabled = false;
 
     if (locationProvider == LocationProvider.GPS) {
-      providerEnabled = await (_channel.invokeMethod('getGPSEnabled') as FutureOr<bool>);
+      providerEnabled = await _channel.invokeMethod('getGPSEnabled');
     } else if (locationProvider == LocationProvider.NETWORK) {
-      providerEnabled = await (_channel.invokeMethod('getNetworkEnabled') as FutureOr<bool>);
+      providerEnabled = await _channel.invokeMethod('getNetworkEnabled');
     }
     return providerEnabled;
   }
